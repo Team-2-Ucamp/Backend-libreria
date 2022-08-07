@@ -1,7 +1,9 @@
-require (mongoose) 
-const express = require('express')
-const app = express()
-const port = 3000
+require('dotenv').config()
+const app = require('./src/app')
+require('./db/mongoose')
+
+
+const port = process.env.port || 3000
 app.listen(port, () => {
-    console.log(port)
+    console.log('El servidor esta corriendo')
 })
